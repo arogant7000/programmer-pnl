@@ -267,7 +267,7 @@
         	<div class="fullwidth-content wrapper">
 
             	<h3><strong>Join our Newsletter</strong></h3>
-                <h5 class="subtitle-1">Get the latest news from Sudo, and receive 10% for your next order.</h5>
+                <h5 class="subtitle-1">Dapatkan Informasi Update dari Kami.</h5>
                 <div class="spacer-mini"></div>
                 <form action="#" method="post" id="newsletter-widget-form">
                     <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Your Email Adress">

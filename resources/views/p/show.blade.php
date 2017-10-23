@@ -4,6 +4,116 @@
   {{$post->title}}
 @endsection
 
+@section('header')
+  <!-- HEADER -->
+  <header id="header" class="header-transparent transparent-light">
+    <div class="header-inner clearfix">
+
+            <!-- LOGO -->
+            <div id="logo" class="left-float">
+                <a href="index.html">
+                  <img id="scroll-logo" src="files/uploads/logo-sudo-scroll.png" srcset="files/uploads/logo-sudo-scroll.png 1x, files/uploads/logo-sudo-scroll@2x.png 2x" alt="Logo Scroll">
+                  <img id="dark-logo" src="files/uploads/logo-sudo-dark.png" srcset="files/uploads/logo-sudo-dark.png 1x, files/uploads/logo-sudo-dark@2x.png 2x" alt="Logo Dark">
+                  <img id="light-logo" src="files/uploads/logo-sudo-light.png" srcset="files/uploads/logo-sudo-light.png 1x, files/uploads/logo-sudo-light@2x.png 2x" alt="Logo Light">
+                </a>
+            </div>
+
+            <!-- MAIN NAVIGATION -->
+            <div id="menu" class="right-float">
+          <a href="#" class="responsive-nav-toggle"><span class="hamburger"></span></a>
+                <div class="menu-inner">
+                    <nav id="main-nav">
+                        <ul>
+                            <li class="menu-item-has-children"><a href="/">Home</a>
+                            </li>
+
+                            <li class="menu-item-has-children"><a href="#">Pages</a>
+                                <ul class="submenu">
+                                    <li class="menu-item-has-children"><a href="/about_me">About</a></li>
+                                    <li class="menu-item-has-children"><a href="/service">Services</a></li>
+                                    <li class="menu-item-has-children"><a href="/contact">Contact</a></li>
+                                    <li class="menu-item-has-children"><a href="#">Miscellaneous</a>
+                                        <ul class="submenu">
+                                            <li><a href="/maintenance">Maintenance</a></li>
+                                            <li><a href="/faq">FAQ</a></li>
+                                            <li><a href="/er">404</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+
+
+
+                            <li class="menu-item-has-children mega-menu"><a href="/article">Blog</a></li>
+
+                            <li class="menu-item-has-children"><a href="shop-grid-fullwidth.html">Shop</a></li>
+                        </ul>
+                    </nav>
+
+                    <div id="menu-misc" class="clearfix">
+
+                        <!-- HEADER SEARCH -->
+                        <div id="header-search">
+                            <a href="#" id="show-search"><i class="fa fa-search"></i></a>
+                            <div class="header-search-content">
+                                <form action="http://www.spab-rice.com/themeforest/sudo/demo/search.html" method="get">
+                                    <a href="#" id="close-search"></a>
+                                    <input type="text" name="q" class="form-control" value="" placeholder="Enter your search ...">
+                                    <h5 class="subtitle-1">... & press enter to start</h5>
+                                </form>
+                                <div class="search-outer"></div>
+                            </div>
+                        </div>
+
+                        <!-- HEADER CART -->
+                        <div id="header-cart">
+                            <a href="shop-page-cart.html" id="show-cart"><i class="fa fa-shopping-cart"></i><span>3</span></a>
+                            <div class="header-cart-content">
+                                <ul class="cart-item-list">
+                                    <li>
+                                        <div class="cart-item-image">
+                                            <a href="shop-single-simple.html"><img src="files/uploads/shop-cart-thumb-1.jpg" alt="SEO NAME" /></a>
+                                        </div>
+                                        <div class="cart-item-desc">
+                                            <h6 class="product-name uppercase"><a href="#">White Stripes Shirt</a></h6>
+                                            <span class="cart-item-quantity">2 x</span>
+                                            <span class="cart-item-price">$ 26.99</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cart-item-image">
+                                            <a href="shop-single-simple.html"><img src="files/uploads/shop-cart-thumb-2.jpg" alt="SEO NAME" /></a>
+                                        </div>
+                                        <div class="cart-item-desc">
+                                            <h6 class="product-name uppercase"><a href="#">Wood Watch</a></h6>
+                                            <span class="cart-item-quantity">1 x</span>
+                                            <span class="cart-item-price">$ 189.99</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="cart-total">
+                                    <h6 class="cart-total-name">Total</h6>
+                                    <div class="cart-total-amount">$ 243,97</div>
+                                </div>
+                                <div class="cart-action">
+                                    <a href="shop-page-cart.html" class="cart-action-cart sr-button button-mini button-3">View Cart</a>
+                                    <a href="shop-page-checkout.html" class="cart-action-checkout sr-button button-mini button-2">Checkout</a>
+                                </div>
+                            </div>
+                        </div><!-- END #header-cart -->
+
+
+                    </div><!-- END #menu-misc -->
+                </div><!-- END .menu-inner -->
+            </div><!-- END #menu -->
+
+    </div> <!-- END .header-inner -->
+  </header>
+
+@endsection
+
 @section('content')
 
   <!-- HERO  -->
@@ -102,7 +212,7 @@
                         <h6 class="widget-title uppercase">Tags</h6>
                         <div class="tagcloud">
                           @foreach ($tags as $tag)
-                            <a href="{{ route('tags.show', $tag->id) }}">{{ $tag->name }}</a>
+                            <a href="{{ url('/tags/'.$tag->id)}}">{{ $tag->name }}</a>
                             @endforeach
                         </div>
                     </div>
@@ -125,7 +235,7 @@
                         <h6 class="widget-title uppercase">Categories</h6>
                         <ul class="menu">
                           @foreach ($category as $cat)
-                            <li><a href="#">{{$cat->name}}</a></li>
+                            <li><a href="{{ url('/category/'.$cat->id)}}">{{$cat->name}}</a></li>
                           @endforeach
                         </ul>
                     </div>

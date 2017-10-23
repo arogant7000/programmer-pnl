@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  All Article
+  {{ $tag->name }}
 @endsection
 
 @section('header')
@@ -119,8 +119,8 @@
 	<section id="hero" class="hero-auto parallax-section text-light" data-parallax-image="files/uploads/hero-blog-3.jpg">
 
         <div id="page-title" class="wrapper align-center">
-            <h4 class="subtitle-2">ALL</h4>
-            <h2><strong>ARTICLE</strong></h2>
+            <h4 class="subtitle-2">Categories</h4>
+            <h2><strong>{{$tag->name}}</strong></h2>
         </div> <!-- END #page-title -->
 
     </section>
@@ -132,7 +132,7 @@
             <div class="main-content left-float">
 
                 <div id="blog-grid" class="isotope-grid blog-container style-column-2 fitrows isotope-spaced">
-                  @foreach ($posts as $key => $value)
+                  @foreach ( $tag->posts as $key => $value)
                     <div class="isotope-item blog-item">
                         <div class="blog-media">
                             <a href="{{ url('/p/'.$value->slug) }}" class="thumb-overlay">

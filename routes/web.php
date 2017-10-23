@@ -21,6 +21,8 @@ Route::get('/faq', 'HomeController@faq');
 Route::get('/er', 'HomeController@er');
 
 Route::get('/article', 'HomeController@indexPost');
+Route::get('/category/{id}', 'HomeController@showcats');
+Route::get('/tags/{id}', 'HomeController@showtags');
 
 Route::get('/p/{slug}','HomeController@show')->where('slug', '[A-Za-z0-9-_]+');
 

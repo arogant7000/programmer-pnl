@@ -7,15 +7,13 @@
               <div class="widget">
                   <img src="{{asset('files/uploads/logo-sudo-light.png')}}" srcset="files/uploads/logo-sudo-light.png 1x, files/uploads/logo-sudo-light@2x.png 2x" alt="Logo">
                     <div class="spacer-mini"></div>
-                    <p>Ultra Performance Wordpress theme for creative agencies.  <br>We provide perfect and professional services,  covering all areas  of the modern communication.</p>
+                    <p>Komunitas Pemrograman PNL.  <br>Komunitas mahasiswa dalam bidang pemograman, yang dibuat khusus bagi mahasiswa Politeknik Negeri Lhokseumawe untuk memenuhi kebutuhan mahasiswa siap menjalani berbagai event.</p>
                 </div>
 
                  <div class="widget">
                     <ul class="socialmedia-widget hover-slide-1">
                         <li class="facebook"><a href="#"></a></li>
                         <li class="twitter"><a href="#"></a></li>
-                        <li class="dribbble"><a href="#"></a></li>
-                        <li class="behance"><a href="#"></a></li>
                         <li class="instagram"><a href="#"></a></li>
                     </ul>
                 </div>
@@ -25,11 +23,9 @@
               <div class="widget">
                   <h6 class="widget-title uppercase">Quick Menu</h6>
                     <ul class="menu">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Portfolio</a></li>
-                      <li><a href="#">Our Team</a></li>
-                      <li><a href="#">Support</a></li>
-                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="/about_me">About Us</a></li>
+                      <li><a href="/service">Services</a></li>
+                      <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -37,11 +33,9 @@
               <div class="widget">
                   <h6 class="widget-title uppercase">Categories</h6>
                     <ul class="menu">
-                      <li><a href="#">Design</a></li>
-                      <li><a href="#">Graphic</a></li>
-                      <li><a href="#">Stories</a></li>
-                      <li><a href="#">Photography</a></li>
-                      <li><a href="#">Video</a></li>
+                      @foreach ($category as $cat)
+                        <li><a href="{{ url('/category/'.$cat->id)}}">{{$cat->name}}</a></li>
+                      @endforeach
                     </ul>
                 </div>
             </div>
@@ -49,9 +43,7 @@
               <div class="widget widget_recent_entries">
                     <h6 class="widget-title uppercase">Recent Posts</h6>
                     <ul>
-                        <li><a href="#">Waterfalls of Iceland</a><span class="post-date">5 hours ago</span></li>
-                        <li><a href="#">Minimal Interior Elements</a><span class="post-date">11 hours ago</span></li>
-                        <li><a href="#">Birds flying around</a><span class="post-date">1 day ago</span></li>
+                        <li><a href="#">/</a><span class="post-date">5 hours ago</span></li>
                     </ul>
                 </div>
             </div>
@@ -60,6 +52,6 @@
         <a id="backtotop" href="#">Back to top</a>
     </div>
 
-     <div class="copyright"><small>Copyright &copy; 2016 by Sudo - Made with Love by <a href="http://www.spab-rice.com/">Spab Rice</a></small></div>
+     <div class="copyright"><small>Copyright &copy; 2017 by Programmer PNL - Made with Love by <a href="/about_me">Mulia Ichsan</a></small></div>
 </footer>
 <!-- FOOTER -->
