@@ -22,4 +22,5 @@ class Posts extends Model
   {
     return $this->belongsToMany('App\Tag');
   }
+
 }

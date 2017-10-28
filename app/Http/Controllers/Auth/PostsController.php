@@ -164,6 +164,9 @@ class PostsController extends Controller
                   $post->images = $fileName;
             $post->body = $request->input('body');
 
+            $post->highlight = (boolean)$request->input('highlight');
+            $post->must_reads = (boolean)$request->input('must_reads');
+
             if ($request->has('save')) {
                 $post->active = 0;
                 $message = 'Post disimpan ke DRAFT';

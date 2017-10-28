@@ -130,12 +130,14 @@
         <div class="column-section boxed-sticky adapt-height vertical-center clearfix">
           <div class="column one-half bigpadding">
               <div class="spacer-medium"></div>
-                <p></p>
+              <p>Saya seorang mahasiswa Teknik Informatika pada Politeknik Negeri Lhokseumawe. Sebagai mahasiswa IT, Programming dapat dikatakan adalah sebagai hobi.</p>
+              <p>Sedikit keahlian yang saya miliki adalah kegemaran saya dalam bahasa Java, dan mendalami tentang Cisco Networking dikarenakan saya termasuk kedalam anggota Cisco Networking Academy Politeknik Aceh.</p>
+              <p>Selain itu saya hobi dalam Pemrograman Web, serta mendalami tentang Framework dalam web. Sehingga saya memutuskan membuat website ini untuk tujuan pembelajaran saya dengan sedikit kemampuan saya.</p>
               <div class="spacer-medium"></div>
             </div>
             <div class="column one-half bigpadding last-col" style="background:#dce7eb;">
               <blockquote>
-                test
+                Kalau hidup sekedar hidup, babi hutan juga hidup. <br> Kalau bekerja sekedar bekerja, kera juga bekerja
                     <cite>Buya Hamka</cite>
                 </blockquote>
             </div>

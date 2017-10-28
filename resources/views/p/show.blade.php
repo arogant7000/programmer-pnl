@@ -120,11 +120,11 @@
 <section id="hero" class="hero-big parallax-section text-light" data-parallax-image="{{ url('photos/post/'.$post->images) }}">
 
       <div id="page-title" class="wrapper align-center">
-          <h5 class="subtitle-2"><a href="#">{{$post->category->name}}</a></h5>
+          <h5 class="subtitle-2"><a href="{{ url('/category/'.$post->category->id)}}">{{$post->category->name}}</a></h5>
           <h1><strong>{{$post->title}}</strong></h1>
           <ul class="blog-meta">
               <li class="post-date">{{ $post->created_at->format('d M Y \a\t h:i a') }}</li>
-              <li class="post-author"><a href="{{ url('/user/'.$post->author_id) }}"><span>by {{ $post->author->name }}</span></a></li>
+              <li class="post-author"><a href="/about_me"><span>by {{ $post->author->name }}</span></a></li>
           </ul>
       </div> <!-- END #page-title -->
       <a href="#" id="scroll-down"></a>
@@ -144,6 +144,13 @@
                   {!! $post->body !!}
                 </div> <!-- END .post-content -->
 
+                <div class="tagcloud">
+                    <h6 class="widget-title uppercase">Tags : </h6>
+                    @foreach ($post->tags as $tag)
+                      <a href="{{ url('/tags/'.$tag->id)}}">{{ $tag->name }}</a>
+                    @endforeach
+                </div>
+
                 <div id="share">
                     <ul>
                         <li class="facebook"><a href="#"><span>Share</span></a></li>
@@ -154,11 +161,11 @@
                 </div>
 
                 <div class="author-box">
-                  <div class="author-image"><img src="files/uploads/avatar-3.jpg" alt="SEO NAME"></div>
+                  <div class="author-image"><img src="{{ asset('files/img/1.jpg') }}" alt="SEO NAME"></div>
                     <div class="author-details">
                       <h6 class="subtitle-2">Written by</h6>
-                        <h5 class="author-name"><a href="#">{{ $post->author->name }}</a></h5>
-                      <p class="author-desc">When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
+                        <h5 class="author-name"><a href="/about_me">{{ $post->author->name }}</a></h5>
+                      <p class="author-desc">Semoga bisa terus berkembang dan mencoba memberi pengetahuan untuk berbagai orang.</p>
                     </div>
                 </div>
 
@@ -177,9 +184,9 @@
                       };
                       */
 
-                      var disqus_shortname = 'aronsmk';
+                      var disqus_shortname = 'programmer-pnl';
                           @if (isset($slug))
-                            var disqus_identifier = 'aronsmk-{{ $slug }}';
+                            var disqus_identifier = 'programmer-pnl-{{ $slug }}';
                           @endif
 
                       (function() { // DON'T EDIT BELOW THIS LINE
@@ -218,8 +225,8 @@
                     </div>
 
                     <div class="widget widget_text">
-                        <h6 class="widget-title uppercase">Text Widget</h6>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                        <h6 class="widget-title uppercase">Ads</h6>
+                        <p></p>
                     </div>
 
                     <div class="widget widget_recent_entries">
@@ -250,9 +257,13 @@
 
       <div id="single-pagination">
             <ul>
-                <li class="prev"><a href="blog-single-video-hero.html">Previous Post</a></li>
-                <li class="back"><a href="blog-modern-fullwidth.html">Back to Blog</a></li>
-                <li class="next"><a href="blog-single-sidebar-fullwidth.html">Next Post</a></li>
+
+
+
+                <li class="back"><a href="/article">Back to Blog</a></li>
+
+
+
             </ul>
         </div>
   </section>

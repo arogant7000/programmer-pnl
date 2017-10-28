@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/select2-flat-theme.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.min.css')}}">
-
+  <link rel="stylesheet" href="{{ asset('bower_components/toastr/toastr.css') }}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -82,7 +82,6 @@ desired effect
 
           <!-- Main content -->
           <section class="content">
-          @include('admin.partials.message')
 
               @yield('content')
 
@@ -213,7 +212,28 @@ desired effect
   });
 </script>
 
+<script>
+@if(Session::has('message'))
+  var type = "{{ Session::get('alert-type', 'info') }}";
+  switch(type){
+      case 'info':
+          toastr.info("{{ Session::get('message') }}");
+          break;
 
+      case 'warning':
+          toastr.warning("{{ Session::get('message') }}");
+          break;
+
+      case 'success':
+          toastr.success("{{ Session::get('message') }}");
+          break;
+
+      case 'error':
+          toastr.error("{{ Session::get('message') }}");
+          break;
+  }
+@endif
+</script>
 
   <script>
   $(function() {

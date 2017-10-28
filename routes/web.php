@@ -13,6 +13,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+
 Route::get('/about_me', 'HomeController@about');
 Route::get('/maintenance', 'HomeController@maintenance');
 Route::get('/contact', 'HomeController@contact');
@@ -20,12 +21,22 @@ Route::get('/service', 'HomeController@service');
 Route::get('/faq', 'HomeController@faq');
 Route::get('/er', 'HomeController@er');
 
+
 Route::get('/article', 'HomeController@indexPost');
 Route::get('/category/{id}', 'HomeController@showcats');
 Route::get('/tags/{id}', 'HomeController@showtags');
-
 Route::get('/p/{slug}','HomeController@show')->where('slug', '[A-Za-z0-9-_]+');
 
+// ADMIN MIDDLEWARE
+Route::group(['middleware'=> ['auth','web','admin']], function(){
+  Route::get('admin/user', 'UserController@index');
+  Route::get('admin/user/edituser/{id}','UserController@edit');
+  Route::post('admin/user/updateuser', 'UserController@update');
+  Route::get('admin/user/deleteuser/{id}','UserController@destroy');
+  Route::get('admin/user/editrole/{id}','UserController@editrole');
+  Route::post('admin/user/updaterole', 'UserController@updaterole');
+
+});
 
 Route::group(['middleware'=> ['auth']], function(){
 
@@ -44,5 +55,13 @@ Route::get('admin/posts/deletepost/{id}','Auth\PostsController@destroy');
     Route::resource('admin/tags', 'TagController', ['except' => ['create']]);
     Route::get('admin/categories/deletecategories/{id}','CategoryController@destroy');
     Route::get('admin/tag/deletetag/{id}','TagController@destroy');
+
+    Route::get('admin/user/editpassword/{id}','UserController@editpassword');
+    Route::post('admin/user/updatepassword', 'UserController@updatepassword');
+
+    //User Route
+
+    Route::get('admin/user/editprofile/{id}','UserController@editprofile');
+    Route::post('admin/user/updateprofile', 'UserController@updateprofile');
 
 });

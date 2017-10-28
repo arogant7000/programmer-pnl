@@ -46,7 +46,11 @@
           <li class="{{ Request::is('admin/categories') ? "active" : "" }}"><a href="/admin/categories/"><i class="fa fa-newspaper-o"></i> Category</a></li>
         </ul>
       </li>
+      @if (Auth::user()->role == 'admin' || Auth::user()->role == 'superadmin' )
+        <li class="{{ Request::is('admin/user') ? "active" : "" }}"><a href="/admin/user/"><i class="fa fa-user"></i> <span>User</span></a></li>
+        @else
 
+      @endif
     </ul>
     <!-- /.sidebar-menu -->
   </section>

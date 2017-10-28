@@ -116,7 +116,7 @@
 
 @section('content')
   <!-- HERO  -->
-	<section id="hero" class="hero-auto parallax-section text-light" data-parallax-image="files/uploads/hero-blog-3.jpg">
+	<section id="hero" class="hero-auto parallax-section text-light" data-parallax-image="files/uploads/2.jpg">
 
         <div id="page-title" class="wrapper align-center">
             <h4 class="subtitle-2">ALL</h4>
@@ -150,7 +150,7 @@
                               {!! str_limit($value->body, $limit = 60, $end = '......') !!}
                             </p>
                             <ul class="blog-meta">
-                                <li class="post-date">5 hours ago</li>
+                                <li class="post-date">{{ $value->created_at->diffForHumans() }}</li>
                                 <li class="post-comments"><i class="fa fa-comments"></i> 3</li>
                             </ul>
                         </div>
@@ -161,12 +161,7 @@
                 <div class="spacer-small"></div>
 
                 <div  id="pagination">
-                    <ul>
-                        <li class="prev"><a href="#">Previous Page</a></li>
-                        <li class="page"><span class="current">1</span></li>
-                        <li class="page"><a href="#">2</a></li>
-                        <li class="next"><a href="#">Next Page</a></li>
-                    </ul>
+                    {{ $posts->links() }}
                 </div>
 
             </div> <!-- END .main-content -->
@@ -193,15 +188,15 @@
                     </div>
 
                     <div class="widget widget_text">
-                        <h6 class="widget-title uppercase">Text Widget</h6>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                        <h6 class="widget-title uppercase">Ads</h6>
+                        <p></p>
                     </div>
 
                     <div class="widget widget_recent_entries">
                         <h6 class="widget-title uppercase">Recent Posts</h6>
                         <ul>
                           @foreach ($recent as $a)
-                            <li><a href="{{ url('/p/'.$a->slug) }}">{{$a ->title}}</a><span class="post-date">{{ $a->created_at->format('d M Y \a\t h:i a') }}</span></li>
+                            <li><a href="{{ url('/p/'.$a->slug) }}">{{$a ->title}}</a><span class="post-date">{{ $value->created_at->diffForHumans() }}</span></li>
                           @endforeach
                         </ul>
                     </div>

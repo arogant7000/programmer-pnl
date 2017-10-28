@@ -119,7 +119,7 @@
 	<section id="hero" class="hero-auto parallax-section text-light" data-parallax-image="files/uploads/hero-blog-3.jpg">
 
         <div id="page-title" class="wrapper align-center">
-            <h4 class="subtitle-2">Categories</h4>
+            <h4 class="subtitle-2">Tags</h4>
             <h2><strong>{{$tag->name}}</strong></h2>
         </div> <!-- END #page-title -->
 
@@ -194,7 +194,7 @@
 
                     <div class="widget widget_text">
                         <h6 class="widget-title uppercase">Text Widget</h6>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                        <p></p>
                     </div>
 
                     <div class="widget widget_recent_entries">

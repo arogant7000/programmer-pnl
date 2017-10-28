@@ -114,7 +114,7 @@
 @endsection
 @section('content')
   <!-- HERO  -->
-<section id="hero" class="hero-full text-light parallax-section" data-parallax-image="">
+<section id="hero" class="hero-full text-light parallax-section" data-parallax-image="files/uploads/1.jpg">
 
       <div id="page-title" class="wrapper align-center">
         <h4 class="subtitle-2">Contact</h4>
@@ -217,10 +217,10 @@
       <div class="spacer-big"></div>
 
       <div id="map1" class="google-map " style="height:400px;"></div>
-      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCGBmXJ6bMftK_U47D-iXClTL6oe6KWmIM"></script>
       <script type="text/javascript">
     function mapinitialize1() {
-      var latlng = new google.maps.LatLng(-33.86938,151.204834);
+      var latlng = new google.maps.LatLng(5.119553,97.157197);
       var myOptions = {
         zoom: 14,
         center: latlng,
@@ -239,7 +239,7 @@
         position: map.getCenter()
       });
 
-      var contentString = "Agency Adress / Info";
+      var contentString = "PNL PROGRAMMER COMMUNITY";
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });

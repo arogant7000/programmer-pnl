@@ -142,7 +142,7 @@
                             <h5 class="post-name"><a href="{{ url('/p/'.$value->slug) }}"><strong>{{$value->title}}</strong></a></h5>
                         </div>
                         <ul class="blog-meta">
-                            <li class="post-date">11 hours ago</li>
+                            <li class="post-date">{{ $value->created_at->diffForHumans() }}</li>
                             <li class="post-comments"><i class="fa fa-comments"></i> 3</li>
                         </ul>
                     </div>
@@ -174,7 +174,7 @@
                           {!! str_limit($value->body, $limit = 60, $end = '......') !!}
                         </p>
                         <ul class="blog-meta">
-                            <li class="post-date">5 hours ago</li>
+                            <li class="post-date">{{ $value->created_at->diffForHumans() }}</li>
                               <!-- <li class="post-comments"><i class="fa fa-comments"></i> 3</li>  -->
                         </ul>
                     </div>
@@ -200,7 +200,7 @@
                         <p>
                           {!! str_limit($value->body, $limit = 60, $end = '......') !!}
                         </p>                        <ul class="blog-meta">
-                            <li class="post-date">1 day ago</li>
+                            <li class="post-date">{{ $value->created_at->diffForHumans() }}</li>
                             <!-- <li class="post-comments"><i class="fa fa-comments"></i> 3</li>  -->
                         </ul>
                     </div>
@@ -212,7 +212,7 @@
 
         <div class="spacer-big"></div>
 
-        <div class="fullwidth-section text-light align-center parallax-section" data-parallax-image="files/uploads/hero-maintenance.jpg">
+        <div class="fullwidth-section text-light align-center parallax-section" data-parallax-image="files/uploads/1.jpg">
         	<div class="fullwidth-content wrapper">
 
             	<h4 class="align-center"><strong>Must Reads</strong></h4>
@@ -224,7 +224,7 @@
                     <div class="owl-item blog-item">
                         <div class="blog-media">
                             <a href="{{ url('/p/'.$value->slug) }}" class="thumb-overlay">
-                                <img src="{{ url('photos/post/'.$value->images) }}" alt="SEO IMG NAME" style="height:250px; width:500px;">
+                                <img src="{{ url('photos/post/'.$value->images) }}" alt="SEO IMG NAME" style="height:300px; width:500px;">
                                 <!-- <img src="{{ asset('files/uploads/blog-thumb-grid-6-hover.jpg')}}" class="hover-pic" alt="SEO IMG NAME"> -->
                             </a>
                         </div>
@@ -237,7 +237,7 @@
                             <p>
                               {!! str_limit($value->body, $limit = 60, $end = '......') !!}
                             </p>                            <ul class="blog-meta">
-                                <li class="post-date">3 days ago</li>
+                                <li class="post-date">{{ $value->created_at->diffForHumans() }}</li>
                                 <!-- <li class="post-comments"><i class="fa fa-comments"></i> 3</li>  -->
                             </ul>
                         </div>
@@ -269,9 +269,9 @@
             	<h3><strong>Join our Newsletter</strong></h3>
                 <h5 class="subtitle-1">Dapatkan Informasi Update dari Kami.</h5>
                 <div class="spacer-mini"></div>
-                <form action="#" method="post" id="newsletter-widget-form">
-                    <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Your Email Adress">
-                    <input type="submit" id="newsletter-submit" value="Sign Up">
+                <form action="https://azurewebsites.us17.list-manage.com/subscribe/post?u=3dfbc25cf26ab1082c2680f46&amp;id=cb55a72f3b" method="post" id="newsletter-widget-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <input type="email" id="newsletter-email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your Email Adress" required>
+                    <input type="submit" id="newsletter-submit" name="subscribe" value="Sign Up">
                 </form>
 
             </div>
