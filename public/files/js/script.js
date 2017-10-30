@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------------------
 
  	Script - All Custom frontend jQuery scripts & functions
- 
+
 -----------------------------------------------------------------------------------*/
 (function(){
 'use strict';
@@ -10,29 +10,29 @@ function smallHeader(){if(jQuery(window).scrollTop()>40){var e=!1,a=!1;jQuery("n
 
 jQuery("head").append("<link rel='stylesheet' href='../assets/demo.css' type='text/css'>");
 jQuery("body").append('<div id=sr-demo-options><div class=sr-demo-inner><a class="sr-button rounded purchase-template" href=http://themeforest.net/item/sudo-high-quality-multipurpose-html-template/14930410?ref=SpabRice target=_blank>Purchase Sudo</a><div class=spacer-mini></div><hr><div class=spacer-mini></div><h5 class="uppercase align-center">Layout</h5><div class=spacer-mini></div><div class="demo-buttons clearfix"><a class="sr-button button-mini rounded button-4 demo-button demo-layout active" href=wide>Wide</a><a class="sr-button button-mini rounded button-4 demo-button demo-layout" href=boxed>Boxed</a></div><div class=spacer-mini></div><hr><div class=spacer-mini></div><h5 class="uppercase align-center">Header Position/Styling</h5><div class=spacer-mini></div><div class="demo-buttons clearfix"><a class="sr-button button-mini rounded button-4 demo-button demo-header active" href=default>Default</a><a class="sr-button button-mini rounded button-4 demo-button demo-header" href=not-sticky>Not Sticky</a><a class="sr-button button-mini rounded button-4 demo-button demo-header" href=floating>Floating</a><a class="sr-button button-mini rounded button-4 demo-button demo-header" href=vertical>Vertical</a></div><div class=spacer-mini></div><hr><div class=spacer-mini></div><h5 class="uppercase align-center">Change Demo</h5><div class=spacer-mini></div><div class="demo-buttons clearfix"><a href=index.html class="thumb-overlay demo-choose"><img src=../assets/demo-main.jpg alt="SEO IMG NAME"></a><a href=index-portfolio-creative.html class="thumb-overlay demo-choose"><img src=../assets/demo-portfolio-creative.jpg alt="SEO IMG NAME"></a><a href=index-agency-business.html class="thumb-overlay demo-choose"><img src=../assets/demo-agency-business.jpg alt="SEO IMG NAME"></a><a href=index-agency-creative.html class="thumb-overlay demo-choose"><img src=../assets/demo-agency-creative.jpg alt="SEO IMG NAME"></a><a href=index-portfolio-modern.html class="thumb-overlay demo-choose"><img src=../assets/demo-portfolio-modern.jpg alt="SEO IMG NAME"></a><a href=index-webapp.html class="thumb-overlay demo-choose"><img src=../assets/demo-webapp.jpg alt="SEO IMG NAME"></a><a href=index-portfolio-classic.html class="thumb-overlay demo-choose"><img src=../assets/demo-portfolio-classic.jpg alt="SEO IMG NAME"></a><a href=index-portfolio-freelancer.html class="thumb-overlay demo-choose"><img src=../assets/demo-portfolio-freelancer.jpg alt="SEO IMG NAME"></a><a href=index-blog-classic.html class="thumb-overlay demo-choose"><img src=../assets/demo-blog-classic.jpg alt="SEO IMG NAME"></a><a href=index-blog-modern.html class="thumb-overlay demo-choose"><img src=../assets/demo-blog-modern.jpg alt="SEO IMG NAME"></a><a href=index-blog-magazine.html class="thumb-overlay demo-choose"><img src=../assets/demo-blog-magazine.jpg alt="SEO IMG NAME"></a><a href=index-shop-1.html class="thumb-overlay demo-choose"><img src=../assets/demo-shop-1.jpg alt="SEO IMG NAME"></a><a href=index-shop-2.html class="thumb-overlay demo-choose"><img src=../assets/demo-shop-2.jpg alt="SEO IMG NAME"></a><a href=index-architecture.html class="thumb-overlay demo-choose"><img src=../assets/demo-architecture.jpg alt="SEO IMG NAME"></a><a href=index-applanding.html class="thumb-overlay demo-choose"><img src=../assets/demo-app.jpg alt="SEO IMG NAME"></a><a href=index-music.html class="thumb-overlay demo-choose"><img src=../assets/demo-music.jpg alt="SEO IMG NAME"></a><a href=index-fitness.html class="thumb-overlay demo-choose"><img src=../assets/demo-gym.jpg alt="SEO IMG NAME"></a><a href=index-restaurant.html class="thumb-overlay demo-choose"><img src=../assets/demo-restaurant.jpg alt="SEO IMG NAME"></a><a href=index-photography.html class="thumb-overlay demo-choose"><img src=../assets/demo-photography.jpg alt="SEO IMG NAME"></a><a href=index-photography-gallery.html class="thumb-overlay demo-choose"><img src=../assets/demo-gallery.jpg alt="SEO IMG NAME"></a><a href=index-medical.html class="thumb-overlay demo-choose"><img src=../assets/demo-medical.jpg alt="SEO IMG NAME"></a><a href=index-onepage.html class="thumb-overlay demo-choose"><img src=../assets/demo-onepage.jpg alt="SEO IMG NAME"></a></div></div><a href=# class=open-demo-option><i class="ion ion-gear-a"></i></a></div>');
-	
-	jQuery('#sr-demo-options').on("click", "a.open-demo-option", function() { 
+
+	jQuery('#sr-demo-options').on("click", "a.open-demo-option", function() {
 		jQuery('#sr-demo-options').toggleClass("active");
 		return false;
 	});
-	
+
 	jQuery('#sr-demo-options').on("click", "a.demo-layout", function() {
-		jQuery(this).addClass("active"); 
-		jQuery(this).siblings("a.demo-layout").removeClass("active"); 
+		jQuery(this).addClass("active");
+		jQuery(this).siblings("a.demo-layout").removeClass("active");
 		var layout = jQuery(this).attr("href");
 		if (layout === 'boxed') { jQuery('body').addClass("page-boxed"); } else { jQuery('body').removeClass("page-boxed"); }
 		setTimeout(function() {
-			if( jQuery().isotope ) { 
+			if( jQuery().isotope ) {
 				jQuery('.isotope-grid').each(function(){
 				var $container = jQuery(this);
 				jQuery(this).prepend('<div class="grid-sizer"></div>');
-				if (!$container.hasClass("fitrows")) { 
+				if (!$container.hasClass("fitrows")) {
 					$container.imagesLoaded( function(){
 						$container.isotope({
 							layoutMode: 'masonry',
 							itemSelector : '.isotope-item',
 							masonry: { columnWidth: '.grid-sizer' }
-						});	
+						});
 					});
 				} else {
 					$container.imagesLoaded( function(){
@@ -40,37 +40,37 @@ jQuery("body").append('<div id=sr-demo-options><div class=sr-demo-inner><a class
 							layoutMode: 'fitRows',
 							itemSelector : '.isotope-item',
 							masonry: { columnWidth: '.grid-sizer' }
-						});	
+						});
 					});
 				}
 			});
 			reorganizeIsotope();
-			adaptHeight(); 
-			
+			adaptHeight();
+
 			}
 		}, 100);
 		return false;
 	});
-	
+
 	var startHeader = jQuery('header').attr("class");
 	if (startHeader == "header-style-vertical") { jQuery("a.demo-header").removeClass("active"); jQuery("a.demo-header[href='vertical']").addClass("active"); }
 	jQuery('#sr-demo-options').on("click", "a.demo-header", function() {
 		jQuery('header').attr("class",startHeader);
 		smallHeader();
-		jQuery(this).addClass("active"); 
-		jQuery(this).siblings("a.demo-header").removeClass("active"); 
+		jQuery(this).addClass("active");
+		jQuery(this).siblings("a.demo-header").removeClass("active");
 		var option = jQuery(this).attr("href");
 		if (option === 'not-sticky') { jQuery('header').addClass("not-sticky"); } else { jQuery('header').removeClass("not-sticky"); }
 		if (option === 'floating') { jQuery('header').addClass("header-style-floating"); } else { jQuery('header').removeClass("header-style-floating"); }
-		if (option === 'vertical') { 
+		if (option === 'vertical') {
 			var dark = "";
-			if (jQuery('header').hasClass("header-dark")) { dark = "header-dark"; } 
-			jQuery('header').attr("class","header-style-vertical "+dark);  
-			} 
+			if (jQuery('header').hasClass("header-dark")) { dark = "header-dark"; }
+			jQuery('header').attr("class","header-style-vertical "+dark);
+			}
 		else { jQuery('header').removeClass("header-style-vertical"); }
-		
+
 		setTimeout(function() {
-			if( jQuery().isotope ) { 
+			if( jQuery().isotope ) {
 				jQuery('.isotope-grid').each(function(){
 					var $container = jQuery(this);
 					jQuery(this).prepend('<div class="grid-sizer"></div>');
@@ -80,7 +80,7 @@ jQuery("body").append('<div id=sr-demo-options><div class=sr-demo-inner><a class
 								layoutMode: 'masonry',
 								itemSelector : '.isotope-item',
 								masonry: { columnWidth: '.grid-sizer' }
-							});	
+							});
 						});
 					} else {
 						$container.imagesLoaded( function(){
@@ -88,15 +88,15 @@ jQuery("body").append('<div id=sr-demo-options><div class=sr-demo-inner><a class
 								layoutMode: 'fitRows',
 								itemSelector : '.isotope-item',
 								masonry: { columnWidth: '.grid-sizer' }
-							});	
+							});
 						});
 					}
 				});
-				reorganizeIsotope(); 
+				reorganizeIsotope();
 				adaptHeight();
 			}
 		}, 100);
-		
+
 		return false;
 	});
 

@@ -18,7 +18,7 @@
 
             <div id="blog-grid-highlights" class="owl-carousel owl-spaced blog-container" data-margin="30" data-nav="false" data-items="3">
 
-              // Bagian Highlight Posts
+              <!-- Bagian Highlight Posts  -->
 
               @foreach ($posts as $key => $value)
                 <div class="owl-item blog-item">
