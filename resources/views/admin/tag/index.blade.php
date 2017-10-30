@@ -26,6 +26,7 @@
       <div class="well">
         {!! Form::open(['route'=>'tags.store', 'method'=>'POST']) !!}
               <h3 class="btn btn-info">Tag Baru</h3><br><br>
+
               {{ Form::label('name', 'Nama :') }}
               {{ Form::text('name', null, ['class'=>'form-control']) }} <br>
               {{ Form::submit('Buat Tag', ['class'=>'btn btn-primary btn-block']) }}

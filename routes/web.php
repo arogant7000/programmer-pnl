@@ -14,15 +14,21 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/about_me', 'HomeController@about');
-Route::get('/maintenance', 'HomeController@maintenance');
-Route::get('/contact', 'HomeController@contact');
-Route::get('/service', 'HomeController@service');
-Route::get('/faq', 'HomeController@faq');
-Route::get('/er', 'HomeController@er');
+Route::get('/p/about-me', 'HomeController@about');
+Route::get('/p/about-team', 'HomeController@about_team');
+Route::get('/p/coming-soon', 'HomeController@coming');
+
+Route::get('/p/contact', 'HomeController@getContact');
+Route::post('/p/contact', 'HomeController@postContact');
+
+Route::get('/p/service', 'HomeController@service');
+Route::get('/p/faq', 'HomeController@faq');
 
 
-Route::get('/article', 'HomeController@indexPost');
+
+Route::get('/p/search','HomeController@search');
+
+Route::get('/p/article', 'HomeController@indexPost');
 Route::get('/category/{id}', 'HomeController@showcats');
 Route::get('/tags/{id}', 'HomeController@showtags');
 Route::get('/p/{slug}','HomeController@show')->where('slug', '[A-Za-z0-9-_]+');
@@ -38,6 +44,8 @@ Route::group(['middleware'=> ['auth','web','admin']], function(){
 
 });
 
+
+// AUTH MIDDLEWARE
 Route::group(['middleware'=> ['auth']], function(){
 
 Route::get('admin/', 'HomeController@indexAdmin');

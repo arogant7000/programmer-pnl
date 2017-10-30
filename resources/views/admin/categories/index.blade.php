@@ -12,6 +12,7 @@
       <div class="box-tools">
         {!! Form::open(['method'=>'GET','url'=>'admin/categories','role'=>'search']) !!}
         <div class="input-group input-group-sm" style="width: 150px;">
+
           <input type="text" name="search" class="form-control pull-right" placeholder="Search">
 
           <div class="input-group-btn">
@@ -25,7 +26,7 @@
     <div class="col-md-3">
       <div class="well">
         {!! Form::open(['route'=>'categories.store', 'method'=>'POST']) !!}
-              <h3 class="btn btn-info">Kategori Baru</h3><br><br>
+      
               {{ Form::label('name', 'Nama :') }}
               {{ Form::text('name', null, ['class'=>'form-control']) }} <br>
               {{ Form::submit('Buat Kategori', ['class'=>'btn btn-primary btn-block']) }}

@@ -37,6 +37,9 @@ class TagController extends Controller
         $this->validate($request, array('name'=> 'required|max:255'));
         $tag = new Tag;
         $tag->name = $request->name;
+
+  
+
         $tag->save();
 
         Session::flash('success', 'New Tag was Successfully Created');

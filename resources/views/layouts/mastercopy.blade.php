@@ -51,10 +51,10 @@
   <!-- PAGE CONTENT -->
   <div id="page-content">
 
-    @include('partials.header')
+    @yield('header')
 
     @yield('content')
-    @include('partials.footer')
+
 
   </div> <!-- END #page-content -->
   <!-- PAGE CONTENT -->

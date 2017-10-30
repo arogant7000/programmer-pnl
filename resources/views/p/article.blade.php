@@ -1,30 +1,33 @@
 @extends('layouts.master')
 
 @section('title')
-  {{ $cate->name }}
+  All Posts/Article
 @endsection
+
 
 @section('content')
 
-	<section id="hero" class="hero-auto parallax-section text-light" data-parallax-image="{{ asset('files/uploads/article.jpg')}}">
+	<section id="hero" class="hero-auto parallax-section text-light" data-parallax-image="{{ asset('files/uploads/service.jpg')}}">
 
         <div id="page-title" class="wrapper align-center">
-            <h4 class="subtitle-2">Categories</h4>
-            <h2><strong>{{$cate->name}}</strong></h2>
+            <h4 class="subtitle-2">ALL</h4>
+            <h2><strong>ARTICLE</strong></h2>
         </div>
 
     </section>
+    <!-- HERO -->
 
+	<!-- PAGEBODY -->
 	<section id="page-body">
     	<div class="wrapper">
             <div class="main-content left-float">
 
                 <div id="blog-grid" class="isotope-grid blog-container style-column-2 fitrows isotope-spaced">
-                  @foreach ( $post as $key => $value)
+                  @foreach ($posts as $key => $value)
                     <div class="isotope-item blog-item">
                         <div class="blog-media">
                             <a href="{{ url('/p/'.$value->slug) }}" class="thumb-overlay">
-                                <img src="{{ url('photos/post/'.$value->images) }}"  style="height:300px; width:400px;">
+                                <img src="{{ url('photos/post/'.$value->images) }}" style="height:300px; width:400px;">
                             </a>
                         </div>
 
@@ -42,15 +45,15 @@
                         </div>
                     </div>
                     @endforeach
-                </div>
+                </div> <!-- END #blog-grid .isotope-grid -->
 
                 <div class="spacer-small"></div>
 
                 <div  id="pagination">
-                    {{ $post->links() }}
+                    {{ $posts->links() }}
                 </div>
 
-            </div>
+            </div> <!-- END .main-content -->
 
             <aside class="sidebar right-float">
               <div class="sidebar-content">
@@ -100,6 +103,6 @@
             </aside>
             <div class="clear"></div>
             <br>
-      	</div> <!-- END .wrapper -->
+      	</div> 
  	</section>
   @endsection
