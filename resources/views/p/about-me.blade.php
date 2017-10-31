@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <section id="hero" class="hero-big parallax-section" data-parallax-image="{{ asset('files/img/1.jpg') }}">
+  <section id="hero" class="hero-big parallax-section" data-parallax-image="{{ asset('files/uploads/me.jpg') }}">
 
         <div id="page-title" class="wrapper title-bottom">
           <h4 style="color:red;"><strong>Hallo, Saya Mulia Ichsan</strong></h4>
