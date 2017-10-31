@@ -52,7 +52,9 @@ $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
-
+$app->bind('path.public', function(){
+    return __DIR__;
+});
 $response->send();
 
 $kernel->terminate($request, $response);
