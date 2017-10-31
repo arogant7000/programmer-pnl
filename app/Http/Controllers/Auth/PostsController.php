@@ -10,6 +10,7 @@ use Redirect;
 use App\Category;
 use App\Tag;
 use Session;
+use Image;
 
 
 class PostsController extends Controller
@@ -64,13 +65,15 @@ class PostsController extends Controller
 
         $post->category_id = $request->input('category_id');
 
-        if ($request->file('images')) {
-          $fileName = str_random(30);
-          $request->file('images')->move("photos/post",$fileName);
-        }else {
-          $fileName = $post->images;
+        //save our image
+        if ($request->hasFile('images')) {
+           $image = $request->file('images');
+           $fileName = time() . '.' . $image->getClientOriginalExtension();
+           $location = public_path('images/' . $fileName);
+           Image::make($image)->resize(800, 400)->save($location);
+
+           $post->images = $fileName;
         }
-        $post->images = $fileName;
 
         if ($request->has('save')) {
           $post->active = 0;

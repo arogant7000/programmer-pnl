@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6bfaad72add84ce00de6aa923f18120",
+    "content-hash": "cb44f07ed43bff0f761997ced6d32f4b",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -215,16 +215,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "322a4ade249467179c50a3e50eda8760ff3af2a3"
+                "reference": "3603dbcc9a17d307533473246a6c58c31cf17919"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/322a4ade249467179c50a3e50eda8760ff3af2a3",
-                "reference": "322a4ade249467179c50a3e50eda8760ff3af2a3",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/3603dbcc9a17d307533473246a6c58c31cf17919",
+                "reference": "3603dbcc9a17d307533473246a6c58c31cf17919",
                 "shasum": ""
             },
             "require": {
@@ -281,7 +281,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2017-07-03T15:50:40+00:00"
+            "time": "2017-09-21T16:29:17+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -2280,12 +2280,12 @@
             "version": "0.9.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/padraic/mockery.git",
+                "url": "https://github.com/mockery/mockery.git",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
                 "shasum": ""
             },

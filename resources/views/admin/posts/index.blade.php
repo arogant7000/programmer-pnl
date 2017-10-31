@@ -40,7 +40,7 @@
           <td>{{$no++}}</td>
 
           <td>
-            <img src="{{ url('photos/post/'.$value->images) }}" id="showimages" style="max-width:100px;max-height:50px;float:left;" alt="post pic">
+            <img src="{{ asset('images/'.$value->images) }}" id="showimages" style="max-width:100px;max-height:50px;float:left;" alt="post pic">
           </td>
           <td>{{$value->title}}</td>
           <td>
